@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Products</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        >
+        @vite(['resources/js/products.js'])
+    </head>
+    <body>
+        <main class="container py-5" style="max-width: 700px;">
+            <h1 class="mb-3">Products</h1>
+
+            <table id="products-table" class="table table-bordered table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <hr class="my-4">
+
+            <h2 class="h5 mb-3">Add new product</h2>
+            <form id="product-form" class="row g-2 align-items-end">
+                <div class="col-12 col-sm-5">
+                    <label for="product-name" class="form-label">Name</label>
+                    <input type="text" id="product-name" name="name" class="form-control" required>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <label for="product-price" class="form-label">Price</label>
+                    <input type="number" id="product-price" name="price" class="form-control" step="0.01" min="0" required>
+                </div>
+                <div class="col-12 col-sm-3">
+                    <button type="submit" class="btn btn-primary w-100">Add</button>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>
