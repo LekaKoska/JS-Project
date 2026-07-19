@@ -8,7 +8,7 @@
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
         >
-        @vite(['resources/js/products.js'])
+        <script src="{{ asset('js/products.js') }}" defer></script>
     </head>
     <body>
         <main class="container py-5" style="max-width: 700px;">
