@@ -11,4 +11,16 @@ class ProductService
     {
         return Product::orderBy('id', 'desc')->limit($limit)->get();
     }
+
+    public function createProduct(array $data): Product
+    {
+        return Product::create(['name' => $data['name'], 'price' => $data['price']]);
+    }
+
+    public function updateProduct(Product $product, array $data): Product
+    {
+        $product->update($data);
+
+        return $product;
+    }
 }
