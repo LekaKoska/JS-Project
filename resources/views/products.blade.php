@@ -20,15 +20,22 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Price</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
             </table>
 
+            <div class="message">
+                <p></p>
+            </div>
+
             <hr class="my-4">
 
-            <h2 class="h5 mb-3">Add new product</h2>
+
             <form id="product-form" class="row g-2 align-items-end">
+                <h2 class="h5 mb-3">Add new product</h2>
                 <div class="col-12 col-sm-5">
                     <label for="product-name" class="form-label">Name</label>
                     <input type="text" id="product-name" name="name" class="form-control" required>
@@ -41,6 +48,27 @@
                     <button type="submit" class="btn btn-primary w-100">Add</button>
                 </div>
             </form>
+            <div class="edit-template">
+                <h2 class="h5 mb-3">Edit product</h2>
+                <form id="product-edit-form" class="row g-2 align-items-end">
+                    <input type="hidden" id="product-id">
+                    <div class="col-12 col-sm-5">
+                        <label for="product-name-edit" class="form-label">Name</label>
+                        <input type="text" id="product-name-edit" name="name" class="form-control" required>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <label for="product-price-edit" class="form-label">Price</label>
+                        <input type="number" id="product-price-edit" name="price" class="form-control" step="0.01" min="0" required>
+                    </div>
+                    <br>
+                    <div class="col-12 col-sm-3">
+                        <button type="submit" class="btn btn-primary w-100">Save</button>
+                    </div>
+                    <div class="col-12 col-sm-3">
+                        <button id="cancel-edit" type="submit" data-bs-target="cancel" class="btn btn-danger w-100">Cancel</button>
+                    </div>
+                </form>
+            </div>
         </main>
     </body>
 </html>
